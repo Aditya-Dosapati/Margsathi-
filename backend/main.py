@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# Import routers from the `backend` package so uvicorn can resolve them
-from backend.routes import routing, parking, events, translation, webhooks
+# Import routers from the routes directory
+from routes import routing, parking, events, translation, webhooks
 
 
 def create_app() -> FastAPI:
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run(
-        "backend.main:app",
+        "main:app",
         host="0.0.0.0",
         port=8000,
         reload=True,
